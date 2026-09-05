@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Zentro Fashions - Modern clothing made for everyday confidence.">
+
+    <title>ZENTRO FASHIONS | Wear Confidence, Everyday.</title>
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f5f0;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* ================================
+           TOP BAR
+        ================================= */
+
+        .top-bar {
+            background: #171717;
+            color: #fff;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        .navbar {
+            height: 82px;
+            background: rgba(255,255,255,0.96);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e7e4de;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: 7px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 5px;
+            text-align: center;
+            margin-top: -3px;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(239,234,225,0.98) 0%,
+                    rgba(239,234,225,0.90) 42%,
+                    rgba(239,234,225,0.15) 100%
+                ),
+                url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .small-heading {
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.95;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 430px;
+            color: #454545;
+            margin-bottom: 30px;
+        }
+
+        .main-btn {
+            display: inline-block;
+            background: #181818;
+            color: #fff;
+            padding: 16px 29px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #444;
+            transform: translateY(-2px);
+        }
+
+        .hero-quote {
+            margin-top: 30px;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 15px;
+        }
+
+
+        /* ================================
+           CATEGORY SECTION
+        ================================= */
+
+        .categories {
+            padding: 65px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title .line {
+            width: 35px;
+            height: 2px;
+            background: #222;
+            margin: 0 auto 15px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: 38px;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .category-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .category-card {
+            height: 390px;
+            position: relative;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.6s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.7)
+            );
+        }
+
+        .category-overlay h3 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .category-overlay p {
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           BENEFITS
+        ================================= */
+
+        .benefits {
+            background: #fff;
+            border-top: 1px solid #e5e2dc;
+            border-bottom: 1px solid #e5e2dc;
+            padding: 30px 5%;
+        }
+
+        .benefit-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .benefit-icon {
+            font-size: 27px;
+            margin-bottom: 7px;
+        }
+
+        .benefit h4 {
+            font-size: 14px;
+        }
+
+        .benefit p {
+            font-size: 12px;
+            color: #777;
+        }
+
+
+        /* ================================
+           PRODUCTS
+        ================================= */
+
+        .products {
+            padding: 80px 5%;
+        }
+
+        .product-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-image {
+            height: 360px;
+            background: #ebe8e1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .sale-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #181818;
+            color: white;
+            padding: 6px 10px;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .product-info {
+            padding: 14px 3px;
+        }
+
+        .product-info h3 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .product-info p {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+
+        /* ================================
+           STORY
+        ================================= */
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .story-image {
+            background:
+                url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85")
+                center/cover;
+        }
+
+        .story-content {
+            background: #eeeae2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .story-inner {
+            max-width: 500px;
+        }
+
+        .story-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .story h2 {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .story p {
+            color: #555;
+            margin-bottom: 28px;
+        }
+
+
+        /* ================================
+           NEWSLETTER
+        ================================= */
+
+        .newsletter {
+            padding: 80px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .newsletter h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+        .newsletter p {
+            color: #777;
+            margin: 10px auto 25px;
+            max-width: 500px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            border-bottom: 1px solid #222;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px 5px;
+            background: transparent;
+        }
+
+        .newsletter-form button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #181818;
+            color: #fff;
+            padding: 65px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            letter-spacing: 7px;
+        }
+
+        .footer-brand p {
+            color: #aaa;
+            margin-top: 15px;
+            max-width: 280px;
+            font-size: 13px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 18px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 9px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .socials a {
+            color: white;
+            font-size: 18px;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 11px;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+                height: 70px;
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-icons {
+                display: none;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero {
+                min-height: 620px;
+                background-position: 65% center;
+            }
+
+            .hero-content {
+                padding-top: 180px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-card {
+                height: 280px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image {
+                height: 400px;
+            }
+
+            .story-content {
+                padding: 55px 25px;
+            }
+
+            .story h2 {
+                font-size: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .copyright {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .category-card {
+                height: 240px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter h2 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     TOP BAR
+================================= -->
+
+<div class="top-bar">
+    Free Shipping on All Orders | Wear Confidence, Everyday.
+</div>
+
+
+<!-- ================================
+     NAVIGATION
+================================= -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        ZENTRO
+        <span>FASHIONS</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#">Home</a>
+
+        <a href="#shop">Shop</a>
+
+        <a href="#collections">Collections</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <div class="nav-icons">
+
+        <span>⌕</span>
+        <span>♙</span>
+        <span>🛍</span>
+
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
+
+<!-- ================================
+     HERO
+================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-heading">
+            More Than Clothes
+        </div>
+
+        <h1>
+            IT'S A<br>
+            LIFESTYLE
+        </h1>
+
+        <p>
+            Minimal. Modern. Made for You.
+            Discover everyday clothing designed
+            to move with your style.
+        </p>
+
+        <a href="#collections" class="main-btn">
+            Explore Collection →
+        </a>
+
+        <div class="hero-quote">
+            "Wear What Moves You." — ZENTRO
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     COLLECTIONS
+================================= -->
+
+<section class="categories" id="collections">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <h2>Shop By Category</h2>
+
+        <p>
+            Find your everyday style.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <a href="#shop" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80"
+                alt="Shirts">
+
+            <div class="category-overlay">
+
+                <h3>Shirts</h3>
+
+                <p>
+                    Explore →
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#shop" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+                alt="T-Shirts">
+
+            <div class="category-overlay">
+
+                <h3>T-Shirts</h3>
+
+                <p>
+                    Explore →
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#shop" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80"
+                alt="Trousers">
+
+            <div class="category-overlay">
+
+                <h3>Trousers</h3>
+
+                <p>
+                    Explore →
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <a href="#shop" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80"
+                alt="Jackets">
+
+            <div class="category-overlay">
+
+                <h3>Jackets</h3>
+
+                <p>
+                    Explore →
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     BENEFITS
+================================= -->
+
+<section class="benefits">
+
+    <div class="benefit-grid">
+
+        <div class="benefit">
+
+            <div class="benefit-icon">🚚</div>
+
+            <h4>Free Shipping</h4>
+
+            <p>On All Orders</p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">♢</div>
+
+            <h4>Secure Payments</h4>
+
+            <p>100% Safe & Secure</p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">↩</div>
+
+            <h4>Easy Returns</h4>
+
+            <p>Hassle Free</p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">♧</div>
+
+            <h4>Customer Support</h4>
+
+            <p>We're Here For You</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     PRODUCTS
+================================= -->
+
+<section class="products" id="shop">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <h2>Featured Collection</h2>
+
+        <p>
+            Handpicked styles for your everyday look.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="sale-tag">
+                    BESTSELLER
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=700&q=80"
+                    alt="Classic Shirt">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Classic Solid Shirt
+                </h3>
+
+                <p>
+                    ₹999
+                    <span class="old-price">
+                        ₹1,499
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <span class="sale-tag">
+                    NEW
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+                    alt="Oversized T-Shirt">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Essential Oversized Tee
+                </h3>
+
+                <p>
+                    ₹699
+                    <span class="old-price">
+                        ₹999
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=700&q=80"
+                    alt="Cargo Trousers">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Everyday Cargo Trousers
+                </h3>
+
+                <p>
+                    ₹1,199
+                    <span class="old-price">
+                        ₹1,699
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
+                    alt="Premium Hoodie">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Essential Premium Hoodie
+                </h3>
+
+                <p>
+                    ₹1,299
+                    <span class="old-price">
+                        ₹1,699
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="view-all">
+
+        <a href="#" class="main-btn">
+            View All Products →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     ABOUT / BRAND STORY
+================================= -->
+
+<section class="story" id="about">
+
+    <div class="story-image"></div>
+
+    <div class="story-content">
+
+        <div class="story-inner">
+
+            <div class="story-label">
+                Our Story
+            </div>
+
+            <h2>
+                Built for<br>
+                Real People.
+            </h2>
+
+            <p>
+                Zentro Fashions is more than a clothing brand.
+                It's a movement for individuals who value
+                comfort, style and self-expression.
+            </p>
+
+            <a href="#" class="main-btn">
+                Know More →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     NEWSLETTER
+================================= -->
+
+<section class="newsletter">
+
+    <h2>
+        Stay In The Zentro Circle.
+    </h2>
+
+    <p>
+        Get first access to new collections,
+        exclusive drops and special updates.
+    </p>
+
+
+    <form
+        class="newsletter-form"
+        onsubmit="demoMessage(event)">
+
+        <input
+            type="email"
+            placeholder="Your email address"
+            required>
+
+        <button type="submit">
+            →
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                ZENTRO
+            </div>
+
+            <p>
+                Wear confidence, everyday.
+                Modern clothing created for
+                people who define their own style.
+            </p>
+
+            <div class="socials">
+
+                <a href="#">Instagram</a>
+
+                <a href="#">YouTube</a>
+
+                <a href="#">Pinterest</a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="#">Home</a>
+
+            <a href="#shop">Shop</a>
+
+            <a href="#collections">Collections</a>
+
+            <a href="#about">About</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Help
+            </h4>
+
+            <a href="#">FAQ</a>
+
+            <a href="#">Shipping</a>
+
+            <a href="#">Returns</a>
+
+            <a href="#">Size Guide</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                Contact
+            </h4>
+
+            <a href="#">
+                support@zentrofashions.com
+            </a>
+
+            <a href="#">
+                Hyderabad, India
+            </a>
+
+            <a href="#">
+                Mon – Sat
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <span>
+            © 2026 Zentro Fashions. All rights reserved.
+        </span>
+
+        <span>
+            Privacy Policy &nbsp; | &nbsp; Terms & Conditions
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+================================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    function demoMessage(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for joining the Zentro Circle! This is a demo website."
+        );
+
+    }
+
+</script>
+
+
+</body>
+</html>
